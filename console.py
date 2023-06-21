@@ -130,6 +130,12 @@ class HBNBCommand(cmd.Cmd):
             dic[arg[0]] = arg[2]
         new_instance = HBNBCommand.classes[_cls]()
         for key, value in dic.items():
+            if value[0] == '"' and value[-1] == '"':
+                value = value[1:-1].replace('_', ' ')
+            elif '.' in value:
+                value = float(value)
+            else:
+                value = int(value)
             setattr(new_instance, key, value)
         storage.save()
         print(new_instance.id)
