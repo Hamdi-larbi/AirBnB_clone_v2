@@ -1,1 +1,1 @@
-{}
+{"BaseModel.93367fbe-c121-4c6c-9073-1ed24be943f0": {"id": "93367fbe-c121-4c6c-9073-1ed24be943f0", "created_at": "2023-06-20T17:01:31.151934", "updated_at": "2023-06-20T17:01:31.151939", "key": "\"Hamdi\"", "__class__": "BaseModel"}, "BaseModel.82d4307d-a4d2-492c-896c-e10db09e5f82": {"id": "82d4307d-a4d2-492c-896c-e10db09e5f82", "created_at": "2023-06-20T17:32:28.910841", "updated_at": "2023-06-20T17:32:28.910846", "name": "\"test\"", "__class__": "BaseModel"}}
