@@ -10,6 +10,8 @@ class FileStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of a cls models currently in storage"""
+        if not cls:
+            return FileStorage.__objects
         temp = {}
         for key, value in self.__objects.items():
             if key[1:key.find(']')] == cls:
