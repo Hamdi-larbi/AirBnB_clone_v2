@@ -57,7 +57,7 @@ class FileStorage:
         """delete obj from __objects if it’s inside - if obj is
         equal to None, the method should not do anything"""
         if obj == None:
-            pass
+            return
         for key in self.__objects.keys():
             if self.__objects[key] == obj:
                 del self.__objects[key]
