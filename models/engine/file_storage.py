@@ -33,18 +33,12 @@ class FileStorage:
 
     def reload(self):
         """Loads storage dictionary from file"""
-        from models.base_model import BaseModel
-        from models.user import User
-        from models.place import Place
-        from models.state import State
-        from models.city import City
-        from models.amenity import Amenity
-        from models.review import Review
+        import models
 
         classes = {
-                    'BaseModel': BaseModel, 'User': User, 'Place': Place,
-                    'State': State, 'City': City, 'Amenity': Amenity,
-                    'Review': Review
+                    'BaseModel': models.BaseModel, 'User': models.User, 'Place': models.Place,
+                    'State': models.State, 'City': models.City, 'Amenity': models.Amenity,
+                    'Review': models.Review
                   }
         try:
             temp = {}
@@ -59,8 +53,6 @@ class FileStorage:
         """delete obj from __objects if it’s inside - if obj is
         equal to None, the method should not do anything"""
         if obj != None:
-            for key in self.__objects.keys():
-                if self.__objects[key] == obj:
-                    del self.__objects[key]
-        else:
-            pass
+            key = obj.__class__.__name__ + '.' + obj.id
+            if key in self.__objects:
+                del self.__objects[key]
