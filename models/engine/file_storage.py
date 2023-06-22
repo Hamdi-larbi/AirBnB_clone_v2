@@ -14,7 +14,7 @@ class FileStorage:
             return FileStorage.__objects
         temp = {}
         for key, value in self.__objects.items():
-            if key[:key.find('.')] == cls:
+            if key[1:key.find('.')] == cls:
                 temp[key] = value
         return temp
 
