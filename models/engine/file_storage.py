@@ -60,3 +60,5 @@ class FileStorage:
             for key in self.__objects.keys():
                 if self.__objects[key] == obj:
                     del self.__objects[key]
+        else:
+            pass
