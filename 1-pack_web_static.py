@@ -16,7 +16,7 @@ def do_pack():
         date = time.strftime('%Y%m%d%H%M%S')
 
         file_path = "versions/web_static_{}.tgz".format(date)
-        local("tar -czvf {} web_static".format(file_path))
+        local("tar -czvf {} web_static .".format(file_path))
         return file_path
 
     except Exception:
