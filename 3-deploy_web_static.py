@@ -9,15 +9,6 @@ do_pack = __import__('1-pack_web_static').do_pack
 env.hosts = ['3.235.198.120', '3.239.50.204']
 
 
-def deploy():
-    """Pack and deploy all file """
-    file_path = do_pack()
-    if not file_path:
-        return False
-
-    run_cmd = do_deploy(file_path)
-    return run_cmd
-
 
 def do_deploy(archive_path):
     """Archive distributor"""
@@ -55,3 +46,12 @@ def do_deploy(archive_path):
     except Exception:
         print('Error')
         return False
+
+def deploy():
+    """Pack and deploy all file """
+    file_path = do_pack()
+    if not file_path:
+        return False
+
+    run_cmd = do_deploy(file_path)
+    return run_cmd
